@@ -1,34 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.scss";
+import data from "./data.json";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container">
+        <div className="result">
+          <h2>Your Result</h2>
+          <div className="result-value">
+            <div className="value">
+              <span className="number">76</span>
+              <span className="text">of 100</span>
+            </div>
+          </div>
+          <h1>Great</h1>
+          <p>
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+        <div className="summary">
+          <h2>Summary</h2>
+          <div className="container">
+            {data.map((item) => (
+              <div className={`test ${item.category.toLowerCase()}`} key={item.category}>
+                <div className="test-name">
+                <img src={item.icon}/>
+                  <span>{item.category}</span>
+                </div>
+                <div className="test-value">
+                  <span>{item.score + " / 100"}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <button>Continue</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

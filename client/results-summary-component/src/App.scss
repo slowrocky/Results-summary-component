@@ -1,0 +1,178 @@
+/* imports */
+@import "./assets/fonts/_fonts.scss";
+@import "./assets/styles/_colors.scss";
+
+/* CSS for mobile layout */
+.App {
+  width: 100vw;
+  
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+    .result {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      background-image: linear-gradient($lightSlateBlue, $lightRoyalBlue);
+      border: none;
+      border-radius: 0 0 10% 10%;
+      color: $lightLavender;
+
+      .result-value {
+        width: 35%;
+        background-image: linear-gradient($violetBlue, $persianBlue);
+        border-radius: 50%;
+
+        .value {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .value .number {
+          color: $white;
+          font-size: 3rem;
+          font-weight: 800;
+          margin: 15px 15px 0 15px;
+        }
+
+        .value .text {
+          margin: 0 15px 15px 15px;
+        }
+
+
+      }
+
+      h1 {
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      p {
+        width: 76%;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 auto;
+      }
+
+
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      h2 {
+        width: 80%;
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 80%;
+
+        .test {
+          display: inline-flex;
+          justify-content: space-between;
+          border-radius: 10px;
+          border: none;
+          font-weight: 800;
+
+
+          .test-name {
+            display: flex;
+            margin: 15px;
+
+            img {
+              margin-right: 10px;
+            }
+
+            span {}
+          }
+
+          .test-value {
+            display: flex;
+            margin: 15px;
+
+            span {}
+          }
+        }
+
+        .reaction {
+          background-color: lighten($lightRed, $amount: 30%);
+
+          .test-name {
+            span {
+              color: $lightRed;
+            }
+          }
+        }
+
+        .memory {
+          background-color: lighten($orangeyYellow, $amount: 40%);
+
+          .test-name {
+            span {
+              color: $orangeyYellow;
+            }
+          }
+        }
+
+        .verbal {
+          background-color: lighten($greenTeal, $amount: 60%);
+
+          .test-name {
+            span {
+              color: $greenTeal;
+            }
+          }
+        }
+
+        .visual {
+          background-color: lighten($cobaltBlue, $amount: 50%);
+
+          .test-name {
+            span {
+              color: $cobaltBlue;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 80%;
+        border: none;
+        border-radius: 25px;
+        padding: 20px 0;
+        margin: 15px 0;
+        background-color: $darkGrayBlue;
+        color: lightgray;
+        font-weight: 700;
+        font-size: .95rem;
+      }
+
+    }
+  }
+}
